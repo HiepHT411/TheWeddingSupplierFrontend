@@ -36,3 +36,98 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  font-family: 'Quicksand', sans-serif!important;
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+}
+div{
+  display: block;
+}
+
+
+.sub-header{
+  font-size: 18px;
+  background-color: #f0f0f0;
+  align-items: center;
+}
+
+.container-fluid p{
+  margin: auto;  
+}
+
+.header{
+  background-color: rgb(255, 255, 255);
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  overflow:hidden;
+  z-index: 9696;
+}
+
+.main{
+  margin-top: 140px;
+}
+
+.navbar-collapse{
+  padding-top: 50px;
+}
+
+.mr-auto{
+  height: 90px;
+}
+
+.wrap-icon img{
+  width: 2.5rem;
+  float: right;
+  padding-right: 1rem;
+}
+
+.carousel-inner img{
+  height: 100%;
+  width: 100%;
+}
+
+.card img{
+  height: 100%;
+  width: 100%;
+}
+
+.card-title,
+.card-text{
+  color: #f0f0f0;
+}
+
+.bottom-left{
+  position: relative;
+}
+
+.card-img-overlay{
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+
+.mail-subcribe img{ 
+  height: 1.5rem;
+}
+.mail-subcribe p{
+  font-weight: bold;
+  font-size: larger;
+}
+
+.mail-subcribe{
+  padding: 10px;
+}
+.footer-img img{
+  height: 1rem;
+  width: 1rem;
+}
