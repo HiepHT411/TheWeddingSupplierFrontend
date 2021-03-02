@@ -6,83 +6,39 @@ import React, { Component } from 'react';
 // import Tab from '@material-ui/core/Tab';
 
 import * as NavBar from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
 class HeaderComponent extends Component {
     constructor() {
         super()
 
         this.state = {
-
+            search: false,
+            setSearch: false,
+            
         }
     }
 
-    searchItems = () => {
-        let endpoint = '';
+    submitSearch=(e)=>{
+        e.preventDefault();
+        alert('Searched');
+    }
 
+    openSearch=()=>{
+        this.state.setSearch = true;
     }
     render() {
         
         return (
-
-            // <div>
-            //     <div className="sub-header">
-            //         <div class="container-fluid">
-            //         <p>FPT wedding service supplier</p>
-            //         </div>
-            //     </div>
-            //     <header id ="site-header" class = "main-header">
-            //       <div className="header-mid wrap-flex-align">
-            //         <div class="visible-lg visible-md col-header-mid"></div>
-            //         <div className="wrap-logo">
-            //             <a href="/">FPT Wedding Planner</a>
-            //         </div>
-            //         <div class="header-wrap-icon" text-align = "right">
-            //             <span class="icon-account" aria-label="Tài khoản" title="Tài khoản">
-            //                 <a href="/acount">
-            //                     <i class="fas fa-user-circle"/>
-            //                 </a>
-            //             </span>
-
-            //         </div>
-                    
-            //         <div class="nav-list">
-            //             <div class="nav-item">
-            //                 <a href="/" class="nav-link active">Trang chủ</a>
-            //             </div>
-            //             <div><a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            //                 Sản phẩm
-            //             </a></div>
-            //             <div class="nav-item">
-            //                 <a href="" class="nav-link">Giới thiệu</a>
-            //             </div>
-            //             <div class="nav-item">
-            //                 <a href="" class="nav-link">Blog</a>
-            //             </div>
-            //             <div class="nav-item">
-            //                 <a href="" class="nav-link">Liên hệ</a>
-            //             </div>
-
-            //             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            //                 <a class="dropdown-item" href="#">Nhà bạt</a>
-            //                 <a class="dropdown-item" href="#">Xếp mâm</a>
-            //                 <a class="dropdown-item" href="#">Bê lễ</a>
-            //                 <a class="dropdown-item" href="">Trang trí</a>
-            //             </div>
-            //         </div>
-            //       </div>
-            //       <script src="header.js"></script>
-            //     </header>
-
-            //     <SearchBar callback={this.searchItems} />
-
-            //</div>
-            <div class="header">
+            
+            <div>
                 <div className="sub-header">
-                       <div class="container-fluid">
-                       <p>FPT wedding service supplier</p>
-                       </div>
+                       <p>FPT wedding service supplier system</p>
+                       
                 </div>
-                <NavBar.Navbar className="color-nav" expand="lg">
+            <div class="main-header">
+                
+                {/* <NavBar.Navbar className="color-nav" expand="lg">
                     <NavBar.Navbar.Brand className="logo" href="http://localhost:3000">The Wedding Supplier</NavBar.Navbar.Brand>
                     <NavBar.Navbar.Toggle aria-controls="basic-navbar-nav" data-target="basic-navbar-nav" />
                         <NavBar.Navbar.Collapse id="basic-navbar-nav">
@@ -103,7 +59,25 @@ class HeaderComponent extends Component {
                             </NavBar.Nav>
                             
                         </NavBar.Navbar.Collapse> 
-                </NavBar.Navbar> 
+                </NavBar.Navbar>  */}
+
+                
+                <div class="logo">
+                    <a href="http://localhost:3000">
+                        <h3>The Wedding Supplier</h3>
+                    </a>
+                </div>
+
+
+                <div class="nav-bar">
+                    <nav className="header-menu">
+                        <a href="http://localhost:3000">Home</a>
+                        <a href="/collections">Productions</a>
+                        <a href="/intro">Introduction</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contact">Contact</a>
+                    </nav>
+                </div>  
 
                 <div class="wrap-icon">
                     
@@ -111,14 +85,21 @@ class HeaderComponent extends Component {
                         <img class="user-img" src="images/cart.png"/>
                     </a>
                     <a href="/">
-                        <img class="search-img" src="images/search.png"/>
+                        <img onClick={this.openSearch} class="search-img" src="images/search.png"/>
                     </a>
                     <a href="/">
                         <img class="cart-img" src ="images/user.png"/>
                     </a>
                 </div>
-                <script src = "Elements/header.js"></script>
             </div>
+            <div class="search">
+            <form onSubmit={this.submitSearch}>
+                <input type="text" className={this.searchClass} placeholder="Search..."></input>
+            </form>
+            </div>
+            </div>
+
+            
         );
     }
 }

@@ -14,8 +14,8 @@ class FooterComponent extends Component {
                 <footer className="footer">
 
                 <div class = "container-fluid padding ">
-                        <div class="row ">
-                            <div class="row col-md-8 align-self-center mail-subcribe item-padding">
+                        <div class="row text-left">
+                            <div class="row col-md-8 mail-subcribe item-padding">
                                 <img src="images/mail.png"/>
                                 <p class="item-padding">Đăng kí nhận tin</p>
                                 <form class="form-inline item-padding">

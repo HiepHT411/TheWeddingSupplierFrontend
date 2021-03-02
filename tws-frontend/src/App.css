@@ -52,44 +52,90 @@ div{
   display: block;
 }
 
-
-.sub-header{
-  font-size: 18px;
-  background-color: #f0f0f0;
-  align-items: center;
-}
-
 .container-fluid p{
   margin: auto;  
 }
 
-.header{
+/*======================================header=================================*/
+.sub-header{
+  position: fixed;
+  display: block;
+  top: 0;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  z-index: 9696;
+}
+.sub-header p{
+  letter-spacing: 1px;
+}
+
+.main-header{
   background-color: rgb(255, 255, 255);
   position: fixed; 
-  top: 0; 
+  top: 30px; 
   width: 100%;
   overflow:hidden;
   z-index: 9696;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.main{
-  margin-top: 140px;
+.logo{
+  margin-top: 8px;
+  margin-left: 8px;
 }
-
-.navbar-collapse{
-  padding-top: 50px;
+.logo a{
+  color: rgb(245, 81, 81);
 }
-
-.mr-auto{
-  height: 90px;
+.logo h3{
+  font-weight: bolder;
+  letter-spacing: 1.5px;
 }
 
 .wrap-icon img{
   width: 2.5rem;
   float: right;
   padding-right: 1rem;
+  margin-top: 1rem;
+}
+.wrap-icon{
+  margin-right: 80px;
 }
 
+
+
+.header-menu{
+  margin: 15px 0;
+  }
+.header-menu a{
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+.header-menu a:hover{
+  color: rgb(79, 197, 79);
+}
+
+.search-input{
+  border: 0;
+  width: 0;
+  transition: width 0.2s ease-in;
+}
+.search-input.active{
+  width: 90%;
+}
+.search-input:focus{
+  outline: none;
+}
+/*=============================Home Page=======================*/
+.main{
+  margin-top: 90px;
+}
 .carousel-inner img{
   height: 100%;
   width: 100%;
@@ -115,9 +161,10 @@ div{
   left: 16px;
 }
 
-
+/*===========================footer=======================================*/
 .mail-subcribe img{ 
   height: 1.5rem;
+  padding-left: 20px;
 }
 .mail-subcribe p{
   font-weight: bold;
@@ -126,8 +173,51 @@ div{
 
 .mail-subcribe{
   padding: 10px;
+  
 }
 .footer-img img{
   height: 1rem;
   width: 1rem;
 }
+/*================================Contact page======================*/
+.contact h3{
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+.box-info-contact{
+  margin-left: 2rem;
+}
+.box-info-contact p{
+  padding-top: 3rem;
+}
+
+/*=========================================Intro page=============================*/
+.intro-side-card{
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.intro-side-card h5{
+  margin-top: 20px;
+}
+.intro-side-card p{
+  padding-left: 15px;
+  padding-top: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+.intro-side-card hr{
+  width: 98%;
+  border: 3px solid black;
+ 
+}
+
+.intro-content h3{
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+.intro-content p{
+  padding-bottom: 15px;
+}
+

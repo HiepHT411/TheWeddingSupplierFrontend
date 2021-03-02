@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = "http://locahost:8080/api/tws";
+const API_BASE_URL = "http://localhost:8080/api/tws/feedback";
 
 class TwsService{
     saveFeedback(feedback){

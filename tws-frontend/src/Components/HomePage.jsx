@@ -217,9 +217,9 @@ class HomePage extends Component {
             <hr class="my-hr"></hr>
 
             <div class ="container-fluid padding">
-                <div class= "row welcome text-center">
+                <div class= "row text-center">
                     <div class = "col-12">
-                        <h5 class = "display-4">Sản phẩm bán chạy</h5>
+                        <h5 class="display-4">Sản phẩm bán chạy</h5>
                     </div>
                 </div>
             </div>
