@@ -32,11 +32,11 @@ class HeaderComponent extends Component {
         return (
             
             <div>
-                <div className="sub-header">
+                <div className="sub-header" >
                        <p>FPT wedding service supplier system</p>
                        
                 </div>
-            <div class="main-header">
+            <div class="main-header " role="navigation">
                 
                 {/* <NavBar.Navbar className="color-nav" expand="lg">
                     <NavBar.Navbar.Brand className="logo" href="http://localhost:3000">The Wedding Supplier</NavBar.Navbar.Brand>
@@ -62,33 +62,41 @@ class HeaderComponent extends Component {
                 </NavBar.Navbar>  */}
 
                 
-                <div class="logo">
+                <div class="logo navbar-brand">
                     <a href="http://localhost:3000">
                         <h3>The Wedding Supplier</h3>
                     </a>
                 </div>
 
 
-                <div class="nav-bar">
-                    <nav className="header-menu">
-                        <a href="http://localhost:3000">Home</a>
-                        <a href="/collections">Productions</a>
-                        <a href="/intro">Introduction</a>
-                        <a href="/blog">Blog</a>
-                        <a href="/contact">Contact</a>
+                <div class="navbar">
+                    <nav className="header-menu ">
+                        <li class="nav-item"><a href="http://localhost:3000">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="/collections/all" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productions</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                         </li>
+                        <li class="nav-item"><a href="/intro">Introduction</a></li>
+                        <li class="nav-item"><a href="/blog/news">Blog</a></li>
+                        <li class="nav-item"><a href="/contact">Contact</a></li>
                     </nav>
                 </div>  
 
                 <div class="wrap-icon">
                     
                     <a href="/">
-                        <img class="user-img" src="images/cart.png"/>
+                        <img class="user-img" src="/images/cart.png"/>
                     </a>
                     <a href="/">
-                        <img onClick={this.openSearch} class="search-img" src="images/search.png"/>
+                        <img onClick={this.openSearch} class="search-img" src="/images/search.png"/>
                     </a>
-                    <a href="/">
-                        <img class="cart-img" src ="images/user.png"/>
+                    <a href="/account/login">
+                        <img class="cart-img" src ="/images/user.png"/>
                     </a>
                 </div>
             </div>

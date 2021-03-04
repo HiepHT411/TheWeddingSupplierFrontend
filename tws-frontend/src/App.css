@@ -96,6 +96,11 @@ div{
   letter-spacing: 1.5px;
 }
 
+.navbar li{
+  list-style: none;
+
+}
+
 .wrap-icon img{
   width: 2.5rem;
   float: right;
@@ -109,7 +114,8 @@ div{
 
 
 .header-menu{
-  margin: 15px 0;
+  margin-top: 15px;
+  display: flex;
   }
 .header-menu a{
   display: inline-block;
@@ -162,6 +168,9 @@ div{
 }
 
 /*===========================footer=======================================*/
+.top-footer{
+  background-color: #f0f0f0;
+}
 .mail-subcribe img{ 
   height: 1.5rem;
   padding-left: 20px;
@@ -171,10 +180,11 @@ div{
   font-size: larger;
 }
 
-.mail-subcribe{
+.mail-subcribe,
+.align-self-center{
   padding: 10px;
-  
 }
+
 .footer-img img{
   height: 1rem;
   width: 1rem;

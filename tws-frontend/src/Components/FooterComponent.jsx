@@ -14,9 +14,9 @@ class FooterComponent extends Component {
                 <footer className="footer">
 
                 <div class = "container-fluid padding ">
-                        <div class="row text-left">
+                        <div class="row text-left top-footer">
                             <div class="row col-md-8 mail-subcribe item-padding">
-                                <img src="images/mail.png"/>
+                                <img src="/images/mail.png"/>
                                 <p class="item-padding">Đăng kí nhận tin</p>
                                 <form class="form-inline item-padding">
                                     <input className="rmdb-searchbar-input" type="text" placeholder="Email..."></input>
@@ -26,6 +26,7 @@ class FooterComponent extends Component {
                             <div class="row col-md-4 align-self-center">
                                 
                                 <a><i class="fa fa-fw fa-phone"></i></a>
+                                <p>0123456789</p>
                                 <p>Tư vấn thủ tục, trang trí từ A-Z</p>
                             </div>
                         </div>
@@ -47,18 +48,18 @@ class FooterComponent extends Component {
                                 <hr class="light"></hr>
                                 <p>Tìm kiếm</p>
                                 <p>Giới thiệu</p>
-                                <img src ="images/logo.png"/>
+                                <img src ="/images/logo.png"/>
                             </div>
 
                             <div class = "col-md-3 footer-img">
                                 
                                 <h5>Thông tin liên hệ</h5>
                                 <hr class = "light"/>
-                                <div class="row"><img src="images/mark.png"/>
+                                <div class="row"><img src="/images/mark.png"/>
                                 <p>Hà Nội</p></div>
-                                <div class="row"><img src="images/phone.png"/>
+                                <div class="row"><img src="/images/phone.png"/>
                                 <p>0123456789</p></div>
-                                <div class="row"><img src="images/send.png"/>
+                                <div class="row"><img src="/images/send.png"/>
                                 <p>weddingplanner@ftws.com</p>
                                 </div>
                             </div>
