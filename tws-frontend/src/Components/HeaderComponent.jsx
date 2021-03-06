@@ -105,6 +105,7 @@ class HeaderComponent extends Component {
                 <input type="text" className={this.searchClass} placeholder="Search..."></input>
             </form>
             </div>
+            
             </div>
 
             

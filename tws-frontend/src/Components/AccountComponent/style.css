@@ -1,0 +1,10 @@
+.layout-account{   
+    padding: 6rem 0;
+}
+.user-box a{
+    color: black;
+}
+.user-box a:hover{
+    color: rgb(79, 197, 79);
+}
+
