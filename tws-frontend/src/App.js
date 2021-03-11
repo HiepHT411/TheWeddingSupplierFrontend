@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import interceptors from './Interceptors';
 import HeaderComponent from './Components/HeaderComponent';
 import FooterComponent from './Components/FooterComponent';
 import HomePage from './Components/HomePage';
@@ -15,7 +14,8 @@ import CollectionsHot from './Components/Collections/CollectionsHot';
 import CollectionsSpecial from './Components/Collections/CollectionsSpecial';
 import CollectionsCarryService from './Components/Collections/CollectionsCarryService';
 import CollectionsFontPage from './Components/Collections/CollectionsFontPage';
-import dashboard from './Components/AccountComponent/Dashboard';
+import AdminPage from './Components/Admin/AdminPage';
+import Signup from './Components/AccountComponent/Signup';
 
 
 
@@ -38,7 +38,9 @@ function App() {
             <Route path="/collections/font-page" component={CollectionsFontPage}/>
 
             <Route exact path="/account/login" component={Login}/>
-            <Route exact path="/dashboard" component={dashboard}/>
+            <Route exact path ="/account/signup" component={Signup}/>
+            <Route path ="/adminPage" component={AdminPage}/>
+            
           </Switch>
         </div>
         <FooterComponent/>

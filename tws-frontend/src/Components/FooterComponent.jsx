@@ -13,13 +13,13 @@ class FooterComponent extends Component {
             <div>
                 <footer className="footer">
 
-                <div class = "container-fluid padding ">
+                <div class = "container-fluid ">
                         <div class="row text-left top-footer">
                             <div class="row col-md-8 mail-subcribe item-padding">
                                 <img src="/images/mail.png"/>
                                 <p class="item-padding">Đăng kí nhận tin</p>
                                 <form class="form-inline item-padding">
-                                    <input className="rmdb-searchbar-input" type="text" placeholder="Email..."></input>
+                                    <input className="searchbar" placeholder="Email..."></input>
                                 </form>
                                 <a href="/" class="btn btn-danger">Đăng kí</a>
                             </div>

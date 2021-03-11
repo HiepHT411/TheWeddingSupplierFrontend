@@ -170,6 +170,7 @@ div{
 /*===========================footer=======================================*/
 .top-footer{
   background-color: #f0f0f0;
+  padding: 10px;
 }
 .mail-subcribe img{ 
   height: 1.5rem;
@@ -180,14 +181,15 @@ div{
   font-size: larger;
 }
 
-.mail-subcribe,
-.align-self-center{
-  padding: 10px;
-}
+
 
 .footer-img img{
   height: 1rem;
   width: 1rem;
+}
+
+.top-footer input {
+  box-sizing: content-box;
 }
 /*================================Contact page======================*/
 .contact h3{
@@ -231,3 +233,13 @@ div{
   padding-bottom: 15px;
 }
 
+
+
+.border-right{
+  border-right: 1px solid black;
+  padding: 8rem 0;
+}
+.border-left{
+  border-left: 1px solid black;
+  padding: 8rem 0;
+}
