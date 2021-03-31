@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './style.css';
 import AuthService from "./AuthService";
-
+import {Spring} from "react-spring/renderprops";
 class signup extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +41,8 @@ class signup extends Component {
   render() {
     return (
       <div class="main">
-       
+              <Spring></Spring>
+
         <hr/>
         <div class="layout-account">
            <div class="container-fluid">

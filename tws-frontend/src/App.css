@@ -55,7 +55,20 @@ div{
 .container-fluid p{
   margin: auto;  
 }
-
+/*==================================animattion================================*/
+@keyframes fadeUp{
+  0%{
+      transform: translateY(3rem);
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.fade-up-animation{
+  animation: fadeUp 2s forwards;
+  animation-delay: 0.75s;
+}
 /*======================================header=================================*/
 .sub-header{
   position: fixed;
@@ -101,6 +114,7 @@ div{
 
 }
 
+
 .wrap-icon img{
   width: 2.5rem;
   float: right;
@@ -125,22 +139,24 @@ div{
 }
 .header-menu a:hover{
   color: rgb(79, 197, 79);
+  text-decoration: underline;
 }
 
 .search-input{
-  border: 0;
+  border: none;
   width: 0;
   transition: width 0.2s ease-in;
+  color: black;
 }
+
 .search-input.active{
   width: 90%;
 }
-.search-input:focus{
-  outline: none;
-}
+
 /*=============================Home Page=======================*/
 .main{
-  margin-top: 90px;
+  margin-top: 140px;
+  background: linear-gradient(rgb(255, 255, 255), rgb(245, 245, 245));
 }
 .carousel-inner img{
   height: 100%;
@@ -167,10 +183,22 @@ div{
   left: 16px;
 }
 
+
+
 /*===========================footer=======================================*/
+footer{
+  display: block;
+}
 .top-footer{
-  background-color: #f0f0f0;
-  padding: 10px;
+  background-color: #f3f3f3;
+  display: flex;
+  padding: 15px 0;
+}
+.top-footer .btn-danger{
+  margin-left: 42px;
+}
+.mail-subcribe{
+  display: flex;
 }
 .mail-subcribe img{ 
   height: 1.5rem;
@@ -179,13 +207,19 @@ div{
 .mail-subcribe p{
   font-weight: bold;
   font-size: larger;
+  margin-left: 10px;
 }
-
+.mail-subcribe-form{
+  margin-left: 16px;
+width: 55%; 
+height: 20px;
+}
 
 
 .footer-img img{
   height: 1rem;
   width: 1rem;
+  margin-left: 60px;
 }
 
 .top-footer input {

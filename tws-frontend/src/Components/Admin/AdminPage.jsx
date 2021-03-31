@@ -66,17 +66,24 @@ class AdminPage extends Component {
 
 
                 <div class="container-fluid row">
-                    <div class="col-lg-6 col-sm-12 col-sx-12 border-right">
+                    <div class="col-lg-4 col-sm-12 col-sx-12 border-right">
                         <div>
                             <a href="/blog-management-page">
                                 <button class="btn btn-success" >Quản lí blog</button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-12 col-sx-12 border-left">
+                    <div class="col-lg-4 col-sm-12 col-sx-12 border-left">
                         <div>
                             <a href="/product-management-page">
                                 <button class="btn btn-success">Quản lí sản phẩm</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12 col-sx-12 border-right">
+                        <div>
+                            <a href="/feeadback-management-page">
+                                <button class="btn btn-success" >Feedback</button>
                             </a>
                         </div>
                     </div>

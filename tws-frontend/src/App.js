@@ -8,7 +8,7 @@ import HomePage from './Components/HomePage';
 import ContactComponent from './Components/ContactComponent';
 import IntroComponent from './Components/IntroComponent';
 import Login from './Components/AccountComponent/Login';
-import Post from './Components/Post';
+import Blog from './Components/Blog/Blog';
 import CollectionsAll from './Components/Collections/CollectionsAll';
 import CollectionsHot from './Components/Collections/CollectionsHot';
 import CollectionsSpecial from './Components/Collections/CollectionsSpecial';
@@ -16,8 +16,9 @@ import CollectionsCarryService from './Components/Collections/CollectionsCarrySe
 import CollectionsFontPage from './Components/Collections/CollectionsFontPage';
 import AdminPage from './Components/Admin/AdminPage';
 import Signup from './Components/AccountComponent/Signup';
-
-
+import Cart from './Components/Cart';
+import AdminFeedback from './Components/Admin/AdminFeedback';
+import BlogDetail from './Components/Blog/BlogDetail';
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
             <Route path="/" exact component={HomePage}/>
             <Route path="/contact" component={ContactComponent}/>
             <Route path="/intro" component={IntroComponent}/>
-            <Route path="/blog/news" component={Post}></Route>
-            {/* <Route path="/post/" component={Post}/> */}
+            <Route path="/blog/news" component={Blog}></Route>
+            <Route path="/blog/detail/:id" component={BlogDetail}/>
+
             <Route path="/collections/all" component={CollectionsAll}/>
             <Route path="/collections/hot-products" component={CollectionsHot}/>
             <Route path="/collections/mam-an-hoi-rong-phuong" component={CollectionsSpecial}/>
@@ -40,7 +42,8 @@ function App() {
             <Route exact path="/account/login" component={Login}/>
             <Route exact path ="/account/signup" component={Signup}/>
             <Route path ="/adminPage" component={AdminPage}/>
-            
+            <Route path = "/user/cart" component={Cart}/>
+            <Route path = "/feeadback-management-page" component={AdminFeedback}/>
           </Switch>
         </div>
         <FooterComponent/>

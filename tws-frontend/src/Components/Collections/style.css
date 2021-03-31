@@ -16,3 +16,20 @@
     color: #5ac56c;
 }
 
+.card img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .card-title,
+  .card-text{
+    color: #f0f0f0;
+  }
+  .card-img-overlay{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  .bottom-left{
+    position: relative;
+  }

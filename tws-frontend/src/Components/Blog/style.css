@@ -4,6 +4,10 @@
     color: black;
     font-weight: 500;
 }
+.card a:hover{
+    color: rgb(93, 185, 0);
+    text-decoration: underline;
+}
 
 
 ul li {
@@ -19,3 +23,10 @@ ul li {
     font-weight: bolder;
     float: left;
 }
+
+/* .blog_list 
+{
+  	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+ 
+} */

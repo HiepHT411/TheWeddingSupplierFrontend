@@ -5,72 +5,119 @@ import React, { Component } from 'react';
 // import Tabs from '@material-ui/core/Tabs';
 // import Tab from '@material-ui/core/Tab';
 
+import { withRouter } from "react-router-dom";
+
 import * as NavBar from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
+import AuthService from './AccountComponent/AuthService';
+import UserService from './AccountComponent/UserService';
+import SearchBar from './SearchBar/SearchBar';
+import {API_URL, API_KEY} from '../config';
+import { Navbar } from '../Components/NavBar';
 
 class HeaderComponent extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
-            search: false,
-            setSearch: false,
-            
+            currentUser: {},
+            products: [],
+            loading: false,
+            searchTerm: ''
+        }
+        this.goToUsersCart = this.goToUsersCart.bind(this);
+        this.goToLoginPage = this.goToLoginPage.bind(this); 
+        this.getPublicContent = this.getPublicContent.bind(this);
+    }
+
+   
+    getPublicContent(){
+        UserService.getPublicContent().then(res=>{
+            if(res.data == "publicContent"){
+                this.props.history.push("/intro");
+            }
+        })
+    }
+
+    goToUsersCart(e){
+        e.preventDefault();
+        this.state.currentUser = AuthService.getCurrentUser();
+        if(this.state.currentUser == null){
+            this.props.history.push("/account/login");
+        }else{
+            this.props.history.push("/user/cart");
         }
     }
 
-    submitSearch=(e)=>{
+    goToLoginPage(e){
         e.preventDefault();
-        alert('Searched');
+        this.state.currentUser = AuthService.getCurrentUser();
+        if(this.state.currentUser == null){
+            this.props.history.push("/account/login");
+        }else{
+            this.props.history.push("/user/cart");
+        }
     }
 
-    openSearch=()=>{
-        this.state.setSearch = true;
+    searchItems = (searchTerm) => {
+        let endpoint = '';
+
+        this.setState({
+            products: [],
+            loading: true,
+            searchTerm
+        })
+
+        if(searchTerm  === ''){
+            endpoint = `${API_URL}product/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        } else {
+            endpoint = `${API_URL}search/product?api_key=${API_KEY}&language=en-US&query=${searchTerm}`;
+        }
+        this.fetchItems(endpoint);
     }
+
+    fetchItems = (endpoint) => {
+        fetch(endpoint)
+        .then(result => result.json())
+        .then(result => {
+            this.setState({
+                products: [...this.state.products, ...result.results],
+                loading: false
+            }, ()=> {
+                if(this.state.searchTerm === ""){
+                localStorage.setItem('HomeState', JSON.stringify(this.state));
+                }
+            })
+        })
+        .catch(error => console.error('Error:', error))
+    }
+
+
     render() {
         
         return (
             
             <div>
+                
                 <div className="sub-header" >
                        <p>FPT wedding service supplier system</p>
                        
                 </div>
-            <div class="main-header " role="navigation">
-                
-                {/* <NavBar.Navbar className="color-nav" expand="lg">
-                    <NavBar.Navbar.Brand className="logo" href="http://localhost:3000">The Wedding Supplier</NavBar.Navbar.Brand>
-                    <NavBar.Navbar.Toggle aria-controls="basic-navbar-nav" data-target="basic-navbar-nav" />
-                        <NavBar.Navbar.Collapse id="basic-navbar-nav">
-                            <NavBar.Nav className="mr-auto" >
-                            <NavBar.Nav.Link class= "" href="http://localhost:3000">Trang chủ</NavBar.Nav.Link>
-                            <NavBar.NavDropdown title="Sản phẩm" id="basic-nav-dropdown">
-                                <NavBar.NavDropdown.Item href="#">Nhà Bạt</NavBar.NavDropdown.Item>
-                                <NavBar.NavDropdown.Divider/>
-                                <NavBar.NavDropdown.Item href="#">Xếp mâm</NavBar.NavDropdown.Item>
-                                <NavBar.NavDropdown.Divider/>
-                                <NavBar.NavDropdown.Item href="#">Bê lễ</NavBar.NavDropdown.Item>
-                                <NavBar.NavDropdown.Divider/>
-                                <NavBar.NavDropdown.Item href="#">Trang trí</NavBar.NavDropdown.Item>                     
-                            </NavBar.NavDropdown>
-                            <NavBar.Nav.Link href="/introduction">Giới thiệu</NavBar.Nav.Link>
-                            <NavBar.Nav.Link href="/blog">Blog</NavBar.Nav.Link>
-                            <NavBar.Nav.Link href="http://localhost:3000/contact">Liên hệ</NavBar.Nav.Link>
-                            </NavBar.Nav>
-                            
-                        </NavBar.Navbar.Collapse> 
-                </NavBar.Navbar>  */}
-
+                <Navbar/>
+            {/* <div class="main-header" role="navigation">
                 
                 <div class="logo navbar-brand">
                     <a href="http://localhost:3000">
                         <h3>The Wedding Supplier</h3>
                     </a>
-                </div>
+                </div> */}
 
-
-                <div class="navbar">
-                    <nav className="header-menu ">
+                {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> */}
+                {/* <div class="navbar" id="navbarNav">
+                    <nav className="header-menu">
+                        
                         <li class="nav-item"><a href="http://localhost:3000">Home</a></li>
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="/collections/all" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productions</a>
@@ -81,30 +128,29 @@ class HeaderComponent extends Component {
                                     <a class="dropdown-item" href="#">Something else here</a>
                                 </div>
                          </li>
-                        <li class="nav-item"><a href="/intro">Introduction</a></li>
+                        <li class="nav-item" ><a role="button" onClick={this.getPublicContent} >Introduction</a></li>
                         <li class="nav-item"><a href="/blog/news">Blog</a></li>
                         <li class="nav-item"><a href="/contact">Contact</a></li>
+                        
                     </nav>
-                </div>  
-
-                <div class="wrap-icon">
+                </div>   */}
+                
+                {/* <div class="wrap-icon">
                     
-                    <a href="/">
-                        <img class="user-img" src="/images/cart.png"/>
+                    <a>
+                        <img onClick={this.goToUsersCart} class="cart-img" src="/images/cart.png"/>
                     </a>
                     <a href="/">
                         <img onClick={this.openSearch} class="search-img" src="/images/search.png"/>
                     </a>
-                    <a href="/account/login">
-                        <img class="cart-img" src ="/images/user.png"/>
+                    <a >
+                        <img onClick={this.goToLoginPage} class="user-img" src ="/images/user.png"/>
                     </a>
-                </div>
-            </div>
-            <div class="search">
-            <form onSubmit={this.submitSearch}>
-                <input type="text" className={this.searchClass} placeholder="Search..."></input>
-            </form>
-            </div>
+                </div> */}
+                
+            {/* </div> */}
+            
+            {/* <SearchBar callback={this.searchItems}/> */}
             
             </div>
 
@@ -112,5 +158,4 @@ class HeaderComponent extends Component {
         );
     }
 }
-
-export default HeaderComponent;
+export default withRouter(HeaderComponent);

@@ -30,7 +30,7 @@ class CollectionsAll extends Component {
 								</li>
 								<li class="">
 									<span></span>
-									<a class="" href="/collections/hot-products" title="Sản phẩm nổi bật" target="_self">
+									<a class="" href="/collections/hot-products" title="" target="_self">
 										Sản phẩm nổi bật
 									</a>
 								</li>								

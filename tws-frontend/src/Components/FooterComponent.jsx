@@ -12,25 +12,32 @@ class FooterComponent extends Component {
         return (
             <div>
                 <footer className="footer">
-
-                <div class = "container-fluid ">
-                        <div class="row text-left top-footer">
-                            <div class="row col-md-8 mail-subcribe item-padding">
-                                <img src="/images/mail.png"/>
-                                <p class="item-padding">Đăng kí nhận tin</p>
-                                <form class="form-inline item-padding">
-                                    <input className="searchbar" placeholder="Email..."></input>
-                                </form>
-                                <a href="/" class="btn btn-danger">Đăng kí</a>
-                            </div>
-                            <div class="row col-md-4 align-self-center">
+                    <div class="top-footer">
+                        <div class = "container-fluid ">
+                            <div class ="row align-self-center">
+                                <div class="row col-xs-12 col-sm-12 col-md-8">
+                                    <div class= "mail-subcribe">
+                                    <img src="/images/mail.png"/>
+                                    <p class="item-padding">Đăng kí nhận tin</p>
+                                    </div>
                                 
-                                <a><i class="fa fa-fw fa-phone"></i></a>
-                                <p>0123456789</p>
-                                <p>Tư vấn thủ tục, trang trí từ A-Z</p>
+                                    
+                                        <div class="form-group mail-subcribe-form">
+                                            <input class="form-control"placeholder="Email..."></input>
+                                        </div>
+                                        <button class="btn btn-danger">Đăng kí</button>
+                                    
+                                </div>
+                                <div class="row col-xs-12 col-sm-12 col-md-4 align-self-center">
+                                
+                                    <a><i class="fa fa-fw fa-phone"></i></a>
+                                    <p>0123456789</p>
+                                    <p>Tư vấn thủ tục, trang trí từ A-Z</p>
+                                </div>
                             </div>
                         </div>
-                        <hr/>
+                    </div>
+                    <hr/>
 
                         <div class = "row text-center">
                             <div class = "col-md-4">
@@ -74,12 +81,12 @@ class FooterComponent extends Component {
                                     data-hide-cover="false"
                                     data-show-facepile="false"></div>                                
                             </div>
-                        </div>
-                        <div class = "col-12">
+                    </div>
+                    <div class = "col-12">
                             <hr class = "endpage"/>
                             <p>Copyright &copy; 2021 FPT Wedding Service. Powered by me</p>
-                        </div>
                     </div>
+                    
                 </footer>
             </div>
         );

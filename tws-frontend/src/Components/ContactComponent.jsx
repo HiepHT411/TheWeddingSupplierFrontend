@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import TwsService from '../Services/TwsService';
+import {GoogleMap, withScriptjs, withGoogleMap} from 'react-google-maps';
+import {REACT_APP_GOOGLE_KEY} from '../config';
 
+function Map(){
+    return (
+        <GoogleMap defaultZoom={10} defaultCenter={{lat: 21.027763, lng: 105.834160}}/>
+    );
+}
+
+const WrappedMap = withScriptjs(withGoogleMap(Map));
 class ContactComponent extends Component {
     constructor(props){
         super(props)
@@ -45,16 +54,20 @@ class ContactComponent extends Component {
         return (
             <div class="main contact">
                 <div class="container-fluid row">
-                    <div class="col-md-6">
-                        <h4>GGoogle map</h4>
-                        {/* <iframe 
-                        src="https://www.google.com/maps/embed/v1/place?key=&q=" 
-                        width="100%" height="80%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                    <div class="col-md-6" style={{width: '100vh', height: '100vh'}}>
+                        <h4>Google map</h4>
+                       
+                <WrappedMap googleMapURL = {`https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places
+                                            &key=${REACT_APP_GOOGLE_KEY}`}
+                            loadingElement = {<div style = {{height: '100%'}}/>}
+                            containerElement = {<div style = {{height: '100%'}}/>}
+                            mapElement = {<div style = {{height: '100%'}}/>}
+                />
 
-                        </iframe> */}
+
                     </div>
 
-                    <div class="col-md-6 ">
+                    <div class="col-md-6 fade-up-animation">
                         <h3>Liên hệ với chúng tôi</h3>
                         <br/>
                         <div class="box-info-contact text-left">

@@ -1,13 +1,42 @@
 import React, { Component } from 'react';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 class HomePage extends Component {
     constructor(){
         super()
 
         this.state = {
-
+            serviceproductList: [{id: 1, imgLink: "/images/trangtrihoa.jpg", title: "Trang trí hoa tươi, hoa lụa", text:"-50%", productLink: "#"},
+                                {id: 1, imgLink: "/images/trangtrihoa.jpg", title: "Trang trí hoa tươi, hoa lụa", text:"-50%", productLink: "#"}]
         }
     }
+
+    deleteEvent = (index) =>{
+        const copyServiceProductList = Object.assign([], this.state.serviceproductList);
+        copyServiceProductList.splice(index, 1);
+        this.setState({
+            serviceproductList: copyServiceProductList
+        })
+    }
+
+    
+    
+    // deletePost = (id) => {
+    //     //console.log(id);
+    //     axios.delete(`.../posts/${id}`)
+    //     .then(res => {
+    //         if (res.status === 200) {
+    //             const posts = [...this.state.posts];
+    //             let result = posts.filter(post => (
+    //                 post.id !== id
+    //             ));
+    //             this.setState({
+    //                 posts: result
+    //             })
+    //         } 
+    //     })
+    // }
+
     render() {
         return (
             <div class="main">
@@ -29,33 +58,33 @@ class HomePage extends Component {
                 </section> */}
 
                 
-                <div id="slides" class = "carousel slide carousel-fade" data-bs-ride= "carousel">
-                    <ul class = "carousel-indicators">
-                        <li  data-bs-target = "#slides" data-slide-to= "0" class = "active" aria-current="true" aria-label="Slide 1"></li>
+                {/* <div id="slides" class = "carousel slide carousel-fade" data-bs-ride= "carousel">
+                     <ul class = "carousel-indicators">
+                        <li  data-bs-target = "#slides" data-slide-to= "0" class = "active"></li>
                         <li data-bs-target = "#slides" data-slide-to= "1"></li>
                         <li data-bs-target = "#slides" data-slide-to= "2"></li>
                         <li  data-bs-target = '#slides' data-slide-to= "3"></li>
-                    </ul>
+                    </ul> 
 
                     <div class = "carousel-inner">
                         <div class = "carousel-item active">
-                            <img class="d-block w-100" src = "images/slideshow_1.jpg"/>
-                             {/* <div class = "carousel-caption">
+                            <img class="d-block w-100" src = "images/slideshow_1.jpg" alt=""/>
+                              <div class = "carousel-caption">
                             <h3 class ="display-2">Hệ thống cưới hỏi cao cấp FPT</h3>
                             <button type = "button" class = "btn btn-outline-dark btn-lg">Gọi ngay</button>
-                             </div> */}
+                             </div> 
                         </div>
 
                         <div class = "carousel-item">
-                            <img src = "images/slideshow_2.jpg" alt=""/>
+                            <img class="d-block w-100" src = "/images/slideshow_2.jpg" alt=""/>
                         </div>
         
                         <div class = "carousel-item">
-                            <img src = "images/slideshow_3.jpg"/>
+                            <img class="d-block w-100" src = "images/slideshow_3.jpg" alt=""/>
                         </div>
 
                         <div class="carousel-item">
-                            <img src="images/slideshow_4.jpg"/>
+                            <img class="d-block w-100" src="images/slideshow_4.jpg" alt=""/>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#slides"  data-bs-slide="prev">
@@ -65,49 +94,70 @@ class HomePage extends Component {
                     <button class="carousel-control-next" type="button" data-bs-target="#slides"  data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
-                    </button>
+                    </button> 
 
-                </div>
+                </div> */}
 
+                <Carousel autoPlay="true" emulateTouch = "true" >
+                    <div><img src = "images/slideshow_1.jpg"/></div>
+                    <div><img src = "images/slideshow_2.jpg"/></div>
+                    <div><img src = "images/slideshow_3.jpg"/></div>
+                    <div><img src = "images/slideshow_4.jpg"/></div>
+                </Carousel>
 
                 <div class = "container-fluid padding">
                     <div class = "row card-group padding" >
+                        {/* <div class="col-md-3 row"><ul>
+                            <div>
+                                {
+                                    this.state.serviceproductList.map((product, index)=>{
+                                        return (
+                                            <ServiceListCard key={product.id}
+                                            id={product.id}
+                                            title={product.title}
+                                            imgLink={product.imgLink}
+                                            productLink={product.productLink}
+                                            text ={product.text}
+                                            delete={this.deleteEvent.bind(this, index)}>
+                                            </ServiceListCard>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </ul>
+                        </div> */}
                         <div class = "col-md-3">
-                            <div class ="card bottom-left">
+                            <div class ="card">
                                 <img class ="card-img" src = "images/trangtrihoa.jpg"/>
-                                <div class = "card-img-overlay">
+                                <div class = "card-img-overlay d-flex align-items-end">
                                     <h4 class ="card-title">Trang trí hoa tươi/hoa lụa</h4>
-                                    <p class = "card-text">-50%</p>
                                     <a href = "#" class = "btn btn-outline-secondary">Xem ngay</a>
                                 </div>
                             </div>
                         </div>
                       <div class = "col-md-3">
-                        <div class ="card bottom-left">
+                        <div class ="card">
                             <img class ="card-img-top" src = "images/mamanhoi.jpg" alt=""/>
-                            <div class = "card-img-overlay">
+                            <div class = "card-img-overlay d-flex align-items-end">
                                 <h4 class ="card-title">Xếp mâm ăn hỏi rồng phượng</h4>
-                                <p class = "card-text">Nhiều gói ưu đãi</p>
                                 <a href = "#" class = "btn btn-outline-secondary">Xem ngay</a>
                             </div>
                         </div>
-                      </div>
-                      <div class = "col-md-3">    
-                        <div class ="card bottom-left">
+                      </div> 
+                       <div class = "col-md-3">    
+                        <div class ="card">
                             <img class ="card-img-top" src = "images/hongdusty.jpg"/>
-                            <div class = "card-img-overlay">
+                            <div class = "card-img-overlay d-flex align-items-end">
                                 <h4 class ="card-title">Nhà bạt cao cấp</h4>
-                                <p class = "card-text">Chất lượng cao</p>
                                 <a href = "#" class = "btn btn-outline-secondary">Xem ngay</a>
                             </div>
                         </div>
                       </div>
                       <div class="col-md-3">
-                          <div class = "card bottom-left">
+                          <div class = "card">
                               <img class="card-img-top" src = "images/belechuyennghiep.jpg"/>
-                              <div class="card-img-overlay">
+                              <div class="card-img-overlay d-flex align-items-end">
                                   <h4 class= "card-title">Bê lễ chuyên nghiệp</h4>
-                                  <p class = "card-text">Phục vụ tận tình chu đáo</p>
                                   <a href="/" class= "btn btn-outline-secondary">Xem ngay</a>
                               </div>
                           </div>
@@ -129,7 +179,7 @@ class HomePage extends Component {
             </div>
 
             <div class = "container-fluid padding">
-                    <div class = "row padding" >
+                    <div class = "row padding " >
                         <div class = "col-md-3">
                             <div class ="card text-left">
                                 <a href="https://www.youtube.com/" class ="btn btn-default">
@@ -181,11 +231,11 @@ class HomePage extends Component {
             <hr class="my-hr"></hr>
 
             <div class="container-fluid padding">
-                <div class="row padding">
+                <div class="row padding ">
                     <div class="col-md-4">
-                        <div class="card bottom-left">
+                        <div class="card">
                             <img class="card-img-under-middle" src="images/nhansuphuonglan.jpg"/>
-                            <div class= "card-img-overlay">
+                            <div class= "card-img-overlay d-flex flex-column justify-content-end">
                                 <p class="card-text">Đội ngũ chuyên nghiệp</p>
                                 <h5 class="card-title">Nhân Sự FPT</h5>
                                 <a class="btn btn-outline-secondary">Xem thêm</a>
@@ -193,9 +243,9 @@ class HomePage extends Component {
                         </div>
                     </div>
                     <div class= "col-md-4">
-                        <div class="card bottom-left">
+                        <div class="card">
                             <img class="card-img-under-middle" src="images/cuoihoidep.jpg"/>
-                            <div class="card-img-overlay">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
                                 <p class="card-text">Bộ sưu tập</p>
                                 <h5 class="card-title">Cưới hỏi đẹp FSOFT</h5>
                                 <a class="btn btn-outline-secondary">Xem thêm</a>
@@ -203,9 +253,9 @@ class HomePage extends Component {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card bottom-left">
+                        <div class="card">
                             <img class="card-img-under-middle" src="images/tieccuoisangtrong.jpg"/>
-                            <div class= "card-img-overlay bottom-left">
+                            <div class= "card-img-overlay d-flex flex-column justify-content-end">
                                 <p class="card-text">Mẫu trang trí nhà hàng khách sạn</p>
                                 <h5 class="card-title">Tiệc cưới sang trọng</h5>
                                 <a class="btn btn-outline-secondary">Xem thêm</a>
@@ -227,7 +277,7 @@ class HomePage extends Component {
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
                         <div className="card">
                             <a href="https://www.youtube.com/" class ="btn btn-default">
                                 <img class ="card-img-bottom" src = "images/hongdusty.jpg"/>
@@ -238,7 +288,7 @@ class HomePage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
                         <div className="card">
                             <a href="https://www.youtube.com/" class ="btn btn-default">
                                 <img class ="card-img-bottom" src = "images/batdodo.jpg"/>
@@ -249,7 +299,7 @@ class HomePage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
                         <div className="card">
                             <a href="https://www.youtube.com/" class ="btn btn-default">
                                 <img class ="card-img-bottom" src = "images/xanhmatcha.jpg"/>
@@ -260,7 +310,7 @@ class HomePage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
                         <div className="card">
                             <a href="https://www.youtube.com/" class ="btn btn-default">
                                 <img class ="card-img-bottom" src = "images/xanhsiment.jpg"/>
@@ -271,7 +321,7 @@ class HomePage extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
                         <div className="card">
                             <a href="https://www.youtube.com/" class ="btn btn-default">
                                 <img class ="card-img-bottom" src = "images/kemgolden.jpg"/>
