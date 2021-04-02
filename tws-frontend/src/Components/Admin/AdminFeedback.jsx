@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TwsService from '../../Services/TwsService';
+import AuthService from '../AccountComponent/AuthService';
 
 class AdminFeedback extends Component {
     constructor(props){
@@ -11,6 +12,13 @@ class AdminFeedback extends Component {
     }
 
     componentDidMount(){
+        let user = AuthService.getCurrentUser();
+        if(user == null){
+            this.props.history.push('/account/login');
+        }
+        else if(!user.roles.includes("ROLE_ADMIN")){
+            this.props.history.push('/user/cart');
+        }
         TwsService.getFeedback().then((res)=>{
             this.setState({feedback: res.data});
         });

@@ -19,6 +19,8 @@ import Signup from './Components/AccountComponent/Signup';
 import Cart from './Components/Cart';
 import AdminFeedback from './Components/Admin/AdminFeedback';
 import BlogDetail from './Components/Blog/BlogDetail';
+import AdminBlog from './Components/Admin/AdminBlog';
+import AdminEditBlog from './Components/Admin/AdminEditBlog';
 
 function App() {
   return (
@@ -41,9 +43,12 @@ function App() {
 
             <Route exact path="/account/login" component={Login}/>
             <Route exact path ="/account/signup" component={Signup}/>
+            
             <Route path ="/adminPage" component={AdminPage}/>
             <Route path = "/user/cart" component={Cart}/>
             <Route path = "/feeadback-management-page" component={AdminFeedback}/>
+            <Route path = "/blog-management-page" component = {AdminBlog}/>
+            <Route path = "/adminEditBlog/:id" component = {AdminEditBlog}/>
           </Switch>
         </div>
         <FooterComponent/>

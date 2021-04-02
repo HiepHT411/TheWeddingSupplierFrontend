@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import UserService from "../AccountComponent/UserService";
+import { useHistory } from "react-router-dom";
 // import {
 //   Dropdown,
 //   DropdownItem,
@@ -46,16 +47,20 @@ const Link = styled.a`
   }
 `;
 
-function getPublicContent(){
-  UserService.getPublicContent().then(res=>{
-    if(res.data  == "publicContent"){
-      this.props.history.push('/intro');
-    }
-  });
-}
+
 
 export function NavLinks(props) {
   //const [hidden, setHidden] = useState(true);
+
+  let history = useHistory();
+
+  const getPublicContent = (e) => {
+    UserService.getPublicContent().then(res=>{
+      if(res.data  == "publicContent"){
+        history.push('/intro');
+      }
+    });
+  }
 
   return (
     <NavLinksContainer>

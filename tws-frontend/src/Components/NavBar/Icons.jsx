@@ -92,7 +92,10 @@ export function Icons(props){
         e.preventDefault();
         if(AuthService.getCurrentUser() == null){
             history.push("/account/login");
-        }else{
+        }else if(AuthService.getCurrentUser().roles.includes("ROLE_ADMIN")){
+            history.push('/adminPage');
+        }
+        else{
             history.push("/user/cart");
         }
     };

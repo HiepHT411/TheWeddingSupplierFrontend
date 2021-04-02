@@ -41,7 +41,6 @@ class signup extends Component {
   render() {
     return (
       <div class="main">
-              <Spring></Spring>
 
         <hr/>
         <div class="layout-account">

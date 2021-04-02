@@ -34,7 +34,7 @@ class BlogDetail extends Component {
                             <div>
                                 {
                                     this.state.blogs.map(blog =>
-                                        <a href= "/" >
+                                        <a href= {"/blog/detail/"+blog.id} >
                                             <h6>{blog.title}</h6>
                                         </a>
                                             )
@@ -59,8 +59,10 @@ class BlogDetail extends Component {
                             <h3>{this.state.blog.title}</h3>
                             <p>Author: {this.state.blog.author}</p>
                             <p>Date: {this.state.blog.date}</p>
-                            <span dangerouslySetInnerHTML={{ __html: this.state.blog.content}}/>
-                            <div dangerouslySetInnerHTML={{ __html: this.state.blog.imgLink}}/>
+                            {/* <span dangerouslySetInnerHTML={{ __html: this.state.blog.content}}/>
+                            <div dangerouslySetInnerHTML={{ __html: this.state.blog.imgLink}}/> */}
+                            <p>{this.state.blog.content}</p>
+                            <img src={this.state.blog.imgLink}/>
 
                         </div>
 

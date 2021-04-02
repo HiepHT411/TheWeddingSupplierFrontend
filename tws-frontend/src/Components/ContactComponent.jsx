@@ -50,6 +50,7 @@ class ContactComponent extends Component {
             
         });
     }
+
     render() {
         return (
             <div class="main contact">

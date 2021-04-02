@@ -27,7 +27,8 @@ class Listing extends Component {
                                             <tr key={blog.id}>
                                             {/* <a role="button" onClick={this.goToBlogDetailPage(blog.id)}> */}
                                             <a href={'/blog/detail/'+ blog.id}>
-                                            <div  dangerouslySetInnerHTML={{ __html: blog.imgLink}}/>
+                                            {/* <div  dangerouslySetInnerHTML={{ __html: blog.imgLink}}/> */}
+                                                <img src={blog.imgLink} alt=""/>
                                             </a>
                                             
                                             </tr>
