@@ -20,7 +20,7 @@ class CollectionsSpecial extends Component {
                     </ol>
                 </nav>
                 <div>
-                    <img src="/images/collections-theme2.jpg"/>
+                    <img src="http://localhost:8080/api/tws/resource/theme/2"/>
                 </div>
 				<hr/>
                 <div className="container-fluid">

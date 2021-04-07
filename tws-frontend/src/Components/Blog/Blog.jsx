@@ -41,10 +41,10 @@ class Blog extends Component {
                                 {
                                    
                                     this.state.blogs.map(blog =>
-                                        <a href= "/blog/detail/${blog.id}" >
+                                        <a href= {"/blog/detail/"+blog.id} >
                                             <h6>{blog.title}</h6>
                                         </a>
-                                            )
+                                    )
                                 }
                             </div>
                         </div>
@@ -64,8 +64,6 @@ class Blog extends Component {
                     <div class="col-lg-9">
                         <div><h2>Tin tức</h2></div><br/><br/>
                         <Listing blogs={this.state.blogs}
-                                deleteBlog = {this.deleteBlog}
-                                goToBlogDetailPage = {this.goToBlogDetailPage}
                         />
                         
                     </div>

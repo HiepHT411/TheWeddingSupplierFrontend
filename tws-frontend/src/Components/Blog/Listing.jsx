@@ -28,7 +28,7 @@ class Listing extends Component {
                                             {/* <a role="button" onClick={this.goToBlogDetailPage(blog.id)}> */}
                                             <a href={'/blog/detail/'+ blog.id}>
                                             {/* <div  dangerouslySetInnerHTML={{ __html: blog.imgLink}}/> */}
-                                                <img src={blog.imgLink} alt=""/>
+                                                <img style={{width: 230, height: 150}} src={blog.imgLink+ blog.id}/>
                                             </a>
                                             
                                             </tr>
@@ -41,7 +41,7 @@ class Listing extends Component {
                                                         <h3 >{blog.title}</h3>
                                                         <p>Author: {blog.author}</p>
                                                         <p>Date: {blog.date}</p>
-                                                        <span dangerouslySetInnerHTML={{ __html: blog.content}}/>
+                                                        <h6>{ blog.content.substr(0,50) + "..."}</h6>
                                                         <br/>
                                                     </div>
                                                 </div>

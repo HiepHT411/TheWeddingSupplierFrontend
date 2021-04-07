@@ -31,7 +31,7 @@ class FooterComponent extends Component {
                                 <div class="row col-xs-12 col-sm-12 col-md-4 align-self-center">
                                 
                                     <a><i class="fa fa-fw fa-phone"></i></a>
-                                    <p>0123456789</p>
+                                    <a href="tel:0904518901">0904518901</a>
                                     <p>Tư vấn thủ tục, trang trí từ A-Z</p>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TwsService from '../../Services/TwsService';
+import { BlogImages } from './BlogImages';
 
 class BlogDetail extends Component {
     constructor(props){
@@ -8,7 +9,8 @@ class BlogDetail extends Component {
         this.state = {
             id: this.props.match.params.id,
             blogs: [],
-            blog: {}
+            blog: {},
+            pic: ''
         }
     }
 
@@ -19,12 +21,16 @@ class BlogDetail extends Component {
         TwsService.getAllBlog().then((response)=>{
             this.setState({blogs: response.data});
         });
-    }
-    render() {
+
         
+    }
+    
+    render() {
+
         return (
             <div class= "main">
                 <hr/>
+                
             <section class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3">
@@ -54,7 +60,7 @@ class BlogDetail extends Component {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9">   
                         <div class="col-md-7 text-left">
                             <h3>{this.state.blog.title}</h3>
                             <p>Author: {this.state.blog.author}</p>
@@ -62,7 +68,7 @@ class BlogDetail extends Component {
                             {/* <span dangerouslySetInnerHTML={{ __html: this.state.blog.content}}/>
                             <div dangerouslySetInnerHTML={{ __html: this.state.blog.imgLink}}/> */}
                             <p>{this.state.blog.content}</p>
-                            <img src={this.state.blog.imgLink}/>
+                            <img src={this.state.blog.imgLink+this.state.id}/>
 
                         </div>
 

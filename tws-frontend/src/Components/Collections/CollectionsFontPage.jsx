@@ -14,7 +14,7 @@ class CollectionsAll extends Component {
                 </nav>
                 
                 <div>
-                    <img src ="/images/collections-theme4.jpg"></img>
+                    <img src ="http://localhost:8080/api/tws/resource/theme/4"></img>
                 </div>
 				<hr/>
                 <div class="container-fluid">

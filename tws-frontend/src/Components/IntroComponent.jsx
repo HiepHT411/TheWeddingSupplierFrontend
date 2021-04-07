@@ -18,7 +18,7 @@ export default class IntroComponent extends Component {
                         </div>
                     
                         <div class="intro-side-img">
-                            <img src="images/side-intro.jpg" alt=""/>
+                            <img src="http://localhost:8080/api/tws/resource/images/side-intro" alt=""/>
                         </div>
                         
                     </div>
@@ -49,7 +49,7 @@ export default class IntroComponent extends Component {
 <p>-----------------------------------</p>
                         </div>
                         <div class="intro-main-img">
-                            <img src="images/main-intro.jpg" alt=""/>
+                            <img src="http://localhost:8080/api/tws/resource/images/main-intro" alt=""/>
                         </div>
                     </div>
                 </div>
