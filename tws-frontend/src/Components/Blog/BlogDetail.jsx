@@ -52,23 +52,23 @@ class BlogDetail extends Component {
                             <h3>Danh mục Blog</h3>
                             <hr/>
                             <ul className="text-left">
-                                <li><a href="http://localhost:3000">Home</a></li>
-                                <li><a href="/collections">Productions</a></li>
-                                <li><a href="/intro">Introduction</a></li>
-                                <li><a href="/blog/news">Blog</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="http://localhost:3000">Trang chủ</a></li>
+                                <li><a href="/collections">Sản phẩm</a></li>
+                                <li><a href="/intro">Giới thiệu</a></li>
+                                <li><a href="/blog/news">Bài viết</a></li>
+                                <li><a href="/contact">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-9">   
                         <div class="col-md-7 text-left">
                             <h3>{this.state.blog.title}</h3>
-                            <p>Author: {this.state.blog.author}</p>
-                            <p>Date: {this.state.blog.date}</p>
+                            <p>Tác giả: {this.state.blog.author}</p>
+                            <p>Ngày viết: {this.state.blog.date}</p>
                             {/* <span dangerouslySetInnerHTML={{ __html: this.state.blog.content}}/>
                             <div dangerouslySetInnerHTML={{ __html: this.state.blog.imgLink}}/> */}
-                            <p>{this.state.blog.content}</p>
-                            <img src={this.state.blog.imgLink+this.state.id}/>
+                            <div  dangerouslySetInnerHTML={{ __html: this.state.blog.content}}/>
+                            {/* <img src={this.state.blog.imgLink+this.state.id}/> */}
 
                         </div>
 

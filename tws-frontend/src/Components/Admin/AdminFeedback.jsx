@@ -33,10 +33,10 @@ class AdminFeedback extends Component {
                     <table className = "table table-striped table-bordered">
                         <thead>
                             <tr class = "title">
-                                <th class = "">Name</th>
+                                <th class = "">Tên</th>
                                 <th class = "">Email</th>
-                                <th class = "">Phone</th>
-                                <th class = "">Note</th>
+                                <th class = "">Số điện thoại</th>
+                                <th class = "">Ghi chú</th>
                             </tr>
                         </thead>
 

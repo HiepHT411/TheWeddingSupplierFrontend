@@ -100,7 +100,7 @@ class HeaderComponent extends Component {
             <div>
                 
                 <div className="sub-header" >
-                       <p>FPT wedding service supplier system</p>
+                       <p>Hệ thống cung cấp dịch vụ cưới hỏi FPT</p>
                        
                 </div>
                 <Navbar/>

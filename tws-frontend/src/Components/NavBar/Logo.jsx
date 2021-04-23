@@ -17,10 +17,18 @@ const LogoText = styled.h2`
   letter-spacing: 1.5px;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: rgb(24, 10, 70);
+  }
+`;
+
 export function Logo(props) {
   return (
     <LogoWrapper>
-      <LogoText>The Wedding Supplier</LogoText>
+      <Link href='/'><LogoText>Cưới Hỏi FPT</LogoText></Link>
     </LogoWrapper>
   );
 }

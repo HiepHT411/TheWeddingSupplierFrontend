@@ -8,7 +8,7 @@ class Listing extends Component {
         super(props)
 
         this.state={
-
+            firstImage: ''
         }
     }
 
@@ -22,13 +22,13 @@ class Listing extends Component {
                             {
                                 this.props.blogs.map(
                                 blog => 
-                                    <div class = "row">
+                                    <div class = "row blog_list_element">
                                         <div class= "col-lg-3">
                                             <tr key={blog.id}>
                                             {/* <a role="button" onClick={this.goToBlogDetailPage(blog.id)}> */}
                                             <a href={'/blog/detail/'+ blog.id}>
-                                            {/* <div  dangerouslySetInnerHTML={{ __html: blog.imgLink}}/> */}
-                                                <img style={{width: 230, height: 150}} src={blog.imgLink+ blog.id}/>
+                                                {/* <img style={{width: 230, height: 150}} src={blog.imgLink+ blog.id}/> */}
+                                                <div dangerouslySetInnerHTML={{__html: blog.content.substring((blog.content.indexOf("<img")), ((blog.content.indexOf("/>")) + 2) )}}/>
                                             </a>
                                             
                                             </tr>
@@ -39,9 +39,10 @@ class Listing extends Component {
                                                     
                                                     <div>
                                                         <h3 >{blog.title}</h3>
-                                                        <p>Author: {blog.author}</p>
-                                                        <p>Date: {blog.date}</p>
-                                                        <h6>{ blog.content.substr(0,50) + "..."}</h6>
+                                                        <p>Tác giả: {blog.author}</p>
+                                                        <p>Ngày viết: {blog.date}</p>
+                                                        {/* <div >{ blog.content.substr(0,50) + "..."}</div> */}
+                                                        {/* <div dangerouslySetInnerHTML={{ __html: blog.content.substr(0,50)}}/> */}
                                                         <br/>
                                                     </div>
                                                 </div>

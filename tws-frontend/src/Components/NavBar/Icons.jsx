@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AuthService from '../AccountComponent/AuthService';
 import SearchBar from "../SearchBar/SearchBar";
 import { useHistory } from "react-router-dom";
+import { MenuToggle } from "./MenuToggle";
 
 
 // export default class Icons extends Component{
@@ -107,6 +108,7 @@ export function Icons(props){
                 history.push("/user/cart");
             }
         };
+
     return (
         <WrapIcon>
             <a>
@@ -119,6 +121,7 @@ export function Icons(props){
             <a >
                 <WrapIconImg onClick={goToLoginPage} class="user-img" src ="/images/user.png"/>
             </a>
+           
         </WrapIcon>
     );
 }

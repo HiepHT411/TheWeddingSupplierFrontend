@@ -24,9 +24,8 @@ ul li {
     float: left;
 }
 
-/* .blog_list 
+.blog_list_element
 {
-  	display: grid;
-	grid-template-columns: repeat(3, 1fr);
- 
-} */
+    margin-bottom: 0.7rem;
+
+}

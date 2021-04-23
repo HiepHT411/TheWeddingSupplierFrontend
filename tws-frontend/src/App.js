@@ -21,6 +21,11 @@ import AdminFeedback from './Components/Admin/AdminFeedback';
 import BlogDetail from './Components/Blog/BlogDetail';
 import AdminBlog from './Components/Admin/AdminBlog';
 import AdminEditBlog from './Components/Admin/AdminEditBlog';
+import UploadFile from './Components/UploadFile';
+import BlogCreateBoard from './Components/Admin/BlogCreateBoard';
+import AdminProduct from './Components/Admin/AdminProduct';
+import AdminEditProduct from './Components/Admin/AdminEditProduct';
+import ProductDetail from './Components/Collections/ProductDetail';
 
 function App() {
   return (
@@ -34,6 +39,8 @@ function App() {
             <Route path="/intro" component={IntroComponent}/>
             <Route path="/blog/news" component={Blog}></Route>
             <Route path="/blog/detail/:id" component={BlogDetail}/>
+
+            <Route path="/collections/detail/:id" component={ProductDetail}/>
 
             <Route path="/collections/all" component={CollectionsAll}/>
             <Route path="/collections/hot-products" component={CollectionsHot}/>
@@ -49,6 +56,11 @@ function App() {
             <Route path = "/feeadback-management-page" component={AdminFeedback}/>
             <Route path = "/blog-management-page" component = {AdminBlog}/>
             <Route path = "/adminEditBlog/:id" component = {AdminEditBlog}/>
+            <Route path = "/product-management-page" component = {AdminProduct}/>
+            <Route path = "/adminEditProduct/:id" component = {AdminEditProduct}/>
+
+            <Route path = "/uploadFile" component = {UploadFile}/>
+            <Route path = "/blog/createboard" component = {BlogCreateBoard}/>
           </Switch>
         </div>
         <FooterComponent/>

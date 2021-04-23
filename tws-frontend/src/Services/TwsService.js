@@ -27,6 +27,22 @@ class TwsService{
     getBlog(id){
         return axios.get(API_BASE_URL+'/blog/'+id);
     }
+    
+    getAllProducts(){
+        return axios.get(API_BASE_URL+"/product")
+    }
+    createProduct(product){
+        return axios.post(API_BASE_URL+"/product", product, {headers: authHeader()});
+    }
+    getProducts(type){
+        return axios.get(API_BASE_URL+"/product/"+type);
+    }
+    getDetailProduct(id){
+        return axios.get(API_BASE_URL+"/product/"+id);
+    }
+    deleteProduct(id){
+        return axios.delete(API_BASE_URL+'/product/'+id, {headers: authHeader()});
+    }
 }
 
 export default new TwsService();

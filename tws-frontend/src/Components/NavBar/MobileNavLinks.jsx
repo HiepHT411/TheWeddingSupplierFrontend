@@ -14,7 +14,7 @@ const LinksWrapper = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  height: 100%;
+  height: 100vh;
   list-style: none;
   background-color: #fff;
   width: 100%;
@@ -44,6 +44,8 @@ const Marginer = styled.div`
   height: 2em;
 `;
 
+
+
 export function MobileNavLinks(props) {
   const [isOpen, setOpen] = useState(false);
 
@@ -53,22 +55,22 @@ export function MobileNavLinks(props) {
       {isOpen && (
         <LinksWrapper>
           <LinkItem>
-            <Link href="/">Home</Link>
+            <Link href="/">Trang chủ</Link>
           </LinkItem>
           <LinkItem>
-            <Link href="/collections/all">Production</Link>
+            <Link href="/collections/all">Sản phẩm</Link>
           </LinkItem>
           <LinkItem>
-            <Link href="/intro">Introduction</Link>
+            <Link href="/intro">Giới thiệu</Link>
           </LinkItem>
           <LinkItem>
-            <Link href="/blog/news">Blog</Link>
+            <Link href="/blog/news">Bài viết</Link>
           </LinkItem>
           <LinkItem>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">Liên hệ</Link>
           </LinkItem>
           <Marginer />
-          
+
           <Icons/>
         </LinksWrapper>
       )}

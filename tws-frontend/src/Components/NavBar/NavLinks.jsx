@@ -66,13 +66,13 @@ export function NavLinks(props) {
     <NavLinksContainer>
       <LinksWrapper>
         <LinkItem>
-          <Link href="/">Home</Link>
+          <Link href="/">Trang chủ</Link>
         </LinkItem>
         <LinkItem>
-          <Link href="/collections/all">Production</Link>
+          <Link href="/collections/all">Sản phẩm</Link>
         </LinkItem>
         <LinkItem>
-            <Link role="button" onClick={getPublicContent} >Introduction</Link>
+            <Link role="button" onClick={getPublicContent} >Giới thiệu</Link>
             {/* <Button dropdownToggle onClick={() => setHidden(!hidden)}>
         Dropdown Button
       </Button>
@@ -84,10 +84,10 @@ export function NavLinks(props) {
       </DropdownMenu> */}
         </LinkItem>
         <LinkItem>
-          <Link href="/blog/news">Blog</Link>
+          <Link href="/blog/news">Bài viết</Link>
         </LinkItem>
         <LinkItem>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">Liên hệ</Link>
         </LinkItem>
       </LinksWrapper>
     </NavLinksContainer>

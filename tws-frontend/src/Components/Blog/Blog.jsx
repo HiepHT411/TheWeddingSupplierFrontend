@@ -50,14 +50,14 @@ class Blog extends Component {
                         </div>
                         <br/>
                         <div class="card">
-                            <h3>Danh mục Blog</h3>
+                            <h3>Danh mục</h3>
                             <hr/>
                             <ul className="text-left">
-                                <li><a href="http://localhost:3000">Home</a></li>
-                                <li><a href="/collections">Productions</a></li>
-                                <li><a href="/intro">Introduction</a></li>
-                                <li><a href="/blog/news">Blog</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="http://localhost:3000">Trang chủ</a></li>
+                                <li><a href="/collections">Sản phẩm</a></li>
+                                <li><a href="/intro">Giới thiệu</a></li>
+                                <li><a href="/blog/news">Bài viết</a></li>
+                                <li><a href="/contact">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>

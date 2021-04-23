@@ -85,7 +85,7 @@ div{
   letter-spacing: 1px;
 }
 
-.main-header{
+/* .main-header{
   background-color: rgb(255, 255, 255);
   position: fixed; 
   top: 30px; 
@@ -95,9 +95,9 @@ div{
 
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.logo{
+/* .logo{
   margin-top: 8px;
   margin-left: 8px;
 }
@@ -112,10 +112,10 @@ div{
 .navbar li{
   list-style: none;
 
-}
+} */
 
 
-.wrap-icon img{
+/* .wrap-icon img{
   width: 2.5rem;
   float: right;
   padding-right: 1rem;
@@ -123,26 +123,26 @@ div{
 }
 .wrap-icon{
   margin-right: 80px;
-}
+} */
 
 
 
-.header-menu{
+/* .header-menu{
   margin-top: 15px;
   display: flex;
-  }
-.header-menu a{
+  } */
+/* .header-menu a{
   display: inline-block;
   margin: 0 10px;
   text-decoration: none;
   color: black;
-}
-.header-menu a:hover{
+} */
+/* .header-menu a:hover{
   color: rgb(79, 197, 79);
   text-decoration: underline;
-}
+} */
 
-.search-input{
+/* .search-input{
   border: none;
   width: 0;
   transition: width 0.2s ease-in;
@@ -151,7 +151,7 @@ div{
 
 .search-input.active{
   width: 90%;
-}
+} */
 
 /*=============================Home Page=======================*/
 @keyframes fadeDown{
@@ -316,4 +316,34 @@ height: 20px;
 .border-left{
   border-left: 1px solid black;
   padding: 8rem 0;
+}
+
+/*======================================Draft-js Editor Component================================*/
+.wrapper-class {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+.editor-class {
+  background-color:rgb(245, 239, 239);
+  padding: 1rem;
+  border: 1px solid #ccc;
+  
+}
+.toolbar-class {
+  border: 1px solid #ccc;
+}
+
+.blog-list{
+  margin-bottom: 1rem;
+}
+
+.row-table{
+  width: 99%;
+  text-overflow: clip;
+}
+.content-column{
+  width: 60%;
+}
+.title-row{
+  overflow-x: hidden;
 }
